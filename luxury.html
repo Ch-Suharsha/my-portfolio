@@ -1,0 +1,550 @@
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suharsha Cheedalla | AI Engineer</title>
+    <meta name="description" content="Suharsha Cheedalla - AI Engineer building production ML systems at scale.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        light: '#F5F5F0',
+                        muted: '#8A8A8A',
+                        borderLight: 'rgba(255, 255, 255, 0.1)',
+                        borderDark: 'rgba(0, 0, 0, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        tighter: '-.04em',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(255, 255, 255, 0.1)',
+                        'glow-dark': '0 0 20px rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #F5F5F0;
+            color: #050505;
+            cursor: default;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .dark body {
+            background-color: #050505;
+            color: #F5F5F0;
+        }
+
+        ::selection {
+            background: #050505;
+            color: #F5F5F0;
+        }
+
+        .dark ::selection {
+            background: #F5F5F0;
+            color: #050505;
+        }
+
+        /* Subtle noise texture for premium feel */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 50;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        .luxury-border-b {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: border-color 0.5s ease;
+        }
+
+        .dark .luxury-border-b {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .luxury-border-t {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            transition: border-color 0.5s ease;
+        }
+
+        .dark .luxury-border-t {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover animations */
+        .hover-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #050505;
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .dark .hover-underline::after {
+            background-color: #F5F5F0;
+        }
+
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Image treatment */
+        .luxury-image {
+            filter: grayscale(100%) contrast(1.1) brightness(0.8);
+            transition: filter 0.7s ease;
+        }
+
+        .luxury-image:hover {
+            filter: grayscale(30%) contrast(1.1) brightness(1);
+        }
+    </style>
+</head>
+
+<body
+    class="antialiased font-sans flex flex-col min-h-screen relative selection:bg-dark selection:text-light dark:selection:bg-light dark:selection:text-dark">
+
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav
+        class="w-full px-6 py-8 md:px-12 flex justify-between items-center fixed top-0 z-40 bg-light/80 dark:bg-dark/80 backdrop-blur-md luxury-border-b transition-colors duration-500">
+        <a href="#"
+            class="font-serif italic text-xl tracking-wide cursor-pointer text-dark dark:text-light">Suharsha</a>
+        <div class="hidden md:flex space-x-12 items-center text-xs uppercase tracking-widest font-medium text-muted">
+            <a href="#about"
+                class="hover-underline hover:text-dark dark:hover:text-light transition-colors cursor-pointer">About</a>
+            <a href="#experience"
+                class="hover-underline hover:text-dark dark:hover:text-light transition-colors cursor-pointer">Experience</a>
+            <a href="#work"
+                class="hover-underline hover:text-dark dark:hover:text-light transition-colors cursor-pointer">Work</a>
+            <a href="#contact"
+                class="hover-underline hover:text-dark dark:hover:text-light transition-colors cursor-pointer text-dark dark:text-light font-bold">Hire
+                Me</a>
+
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle"
+                class="cursor-pointer text-muted hover:text-dark dark:hover:text-light transition-colors"
+                aria-label="Toggle Dark Mode">
+                <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+            </button>
+        </div>
+        <a href="Suharsha_Cheedalla_Resume.pdf" target="_blank"
+            class="md:hidden text-xs uppercase tracking-widest border border-borderDark dark:border-borderLight px-4 py-2 hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark transition-colors cursor-pointer">
+            Resume
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+            <div class="lg:col-span-7 z-10 flex flex-col justify-center">
+                <p class="text-xs uppercase tracking-widest text-muted mb-6">AI Engineer &bullet; Software Engineer</p>
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif font-medium leading-[1.1] tracking-tighter mb-8">
+                    Building <br />
+                    <em class="italic text-muted">production</em> ML<br />
+                    systems at scale.
+                </h1>
+                <p class="text-muted md:text-lg max-w-xl font-light leading-relaxed mb-12">
+                    MS in Applied Data Science student at SJSU with 2 years of experience. I specialize in developing
+                    end-to-end AI systems from data pipelines to model deployment with a focus on computer vision, NLP,
+                    and MLOps.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                    <a href="Suharsha_Cheedalla_Resume.pdf" target="_blank"
+                        class="group flex items-center text-xs uppercase tracking-widest cursor-pointer hover:text-muted transition-colors">
+                        <span class="border-b border-light pb-1 group-hover:border-muted transition-colors">Download
+                            Resume</span>
+                        <i data-lucide="arrow-down-right"
+                            class="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"></i>
+                    </a>
+                    <a href="https://github.com/Ch-Suharsha" target="_blank"
+                        class="flex items-center text-xs uppercase tracking-widest text-muted hover:text-light transition-colors cursor-pointer hover-underline">
+                        View GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Image Placeholder (Vansh Style) -->
+            <div
+                class="lg:col-span-5 w-full aspect-[3/4] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl relative group">
+                <!-- Vansh Inspiration: Heavy image processing directly in CSS for monochrome perfection -->
+                <div
+                    class="absolute inset-0 bg-dark/20 dark:bg-dark/40 z-10 pointer-events-none group-hover:bg-transparent transition-colors duration-700">
+                </div>
+                <!-- Add contrast, brightness, and grayscale directly to the image -->
+                <img src="vansh_style_profile.jpg" alt="Suharsha Cheedalla"
+                    class="w-full h-full object-cover object-top transition-all duration-700 filter grayscale contrast-125 brightness-90 group-hover:grayscale-[50%] group-hover:contrast-110 group-hover:brightness-100"
+                    onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop'; this.alt='Profile placeholder';">
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content wrapper -->
+    <main class="w-full">
+
+        <!-- Skills Banner -->
+        <section class="py-12 luxury-border-t luxury-border-b overflow-hidden relative">
+            <div class="flex whitespace-nowrap animate-[marquee_20s_linear_infinite]">
+                <span class="text-4xl md:text-6xl font-serif italic text-dark text-stroke-light px-8"
+                    style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">Python</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-dark text-stroke-light px-8"
+                    style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">PyTorch</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-dark text-stroke-light px-8"
+                    style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">MLOps</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-dark text-stroke-light px-8"
+                    style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">GenAI</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-dark text-stroke-light px-8"
+                    style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">TensorFlow</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-dark text-stroke-light px-8"
+                    style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">Docker</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-dark text-stroke-light px-8"
+                    style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">Kubernetes</span>
+            </div>
+            <style>
+                @keyframes marquee {
+                    0% {
+                        transform: translateX(0%);
+                    }
+
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="px-6 md:px-12 py-32 max-w-7xl mx-auto">
+            <h2 class="text-xs uppercase tracking-widest text-muted mb-16 flex items-center">
+                <span class="w-12 h-px bg-borderDark dark:bg-borderLight mr-4 transition-colors"></span> Professional
+                Experience & Education
+            </h2>
+
+            <div class="mb-16">
+                <p class="text-xl md:text-3xl font-serif leading-relaxed text-dark dark:text-light transition-colors">
+                    I build and deploy <em class="italic text-muted">robust, production-ready AI systems</em>—from core
+                    network infrastructure and scalable MLOps pipelines to advanced LLMs and RAG architectures.
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <!-- VENHAN -->
+                <div
+                    class="group relative py-12 luxury-border-t luxury-border-b border-borderDark dark:border-borderLight flex flex-col md:flex-row justify-between items-start md:items-center cursor-default transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+                    <div class="mb-6 md:mb-0">
+                        <h3
+                            class="text-3xl font-serif tracking-tight mb-2 group-hover:italic transition-all text-dark dark:text-light">
+                            Machine
+                            Learning Engineer Intern</h3>
+                        <p class="text-muted tracking-wide text-sm uppercase">VENHAN</p>
+                    </div>
+                    <div class="text-left md:text-right">
+                        <p class="text-sm tracking-widest text-muted uppercase mb-2">Apr 2022 — Apr 2024</p>
+                        <p class="text-xs text-muted max-w-sm ml-auto font-light leading-relaxed">
+                            Architected scalable ML systems and engineered production pipelines for computer vision
+                            models (90%+ accuracy). Built core APIs and multimodal datasets parsing 50GB+ of data.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SJSU -->
+                <div
+                    class="group relative py-12 luxury-border-b border-borderDark dark:border-borderLight flex flex-col md:flex-row justify-between items-start md:items-center cursor-default transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+                    <div class="mb-6 md:mb-0">
+                        <h3
+                            class="text-3xl font-serif tracking-tight mb-2 group-hover:italic transition-all text-dark dark:text-light">
+                            MS Applied Data Intelligence</h3>
+                        <p class="text-muted tracking-wide text-sm uppercase">San José State University</p>
+                    </div>
+                    <div class="text-left md:text-right">
+                        <p class="text-sm tracking-widest text-muted uppercase mb-2">Dec 2024 — Present</p>
+                        <p class="text-xs text-muted max-w-sm ml-auto font-light leading-relaxed">
+                            Mastering advanced LLMs, RAG architectures, and deploying AI systems at scale. Also managing
+                            university operations as a Student Assistant.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BTech -->
+                <div
+                    class="group relative py-12 luxury-border-b border-borderDark dark:border-borderLight flex flex-col md:flex-row justify-between items-start md:items-center cursor-default transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+                    <div class="mb-6 md:mb-0">
+                        <h3
+                            class="text-3xl font-serif tracking-tight mb-2 group-hover:italic transition-all text-dark dark:text-light">
+                            BTech in Computer Science</h3>
+                        <p class="text-muted tracking-wide text-sm uppercase">GITAM Deemed University</p>
+                    </div>
+                    <div class="text-left md:text-right">
+                        <p class="text-sm tracking-widest text-muted uppercase mb-2">Graduated</p>
+                        <p class="text-xs text-muted max-w-sm ml-auto font-light leading-relaxed">
+                            Formed a strong foundation in core computer science, systems building, and networking
+                            infrastructure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Works (GitHub) -->
+        <section id="work" class="px-6 md:px-12 py-32 bg-light dark:bg-[#080808] transition-colors duration-500">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-16">
+                    <h2 class="text-xs uppercase tracking-widest text-muted flex items-center">
+                        <span class="w-12 h-px bg-borderDark dark:bg-borderLight mr-4 transition-colors"></span>
+                        Selected Works
+                    </h2>
+                    <a href="https://github.com/Ch-Suharsha" target="_blank"
+                        class="text-xs uppercase tracking-widest hover-underline cursor-pointer text-dark dark:text-light">All
+                        Projects</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <a href="https://github.com/Ch-Suharsha/llm-jailbreak-detector" target="_blank"
+                        class="group block cursor-pointer">
+                        <div
+                            class="aspect-[4/3] w-full bg-[#111] luxury-border-t luxury-border-b border-borderLight mb-6 p-8 flex flex-col justify-between group-hover:bg-[#151515] transition-colors relative overflow-hidden">
+                            <i data-lucide="shield-alert"
+                                class="w-8 h-8 text-muted group-hover:text-light transition-colors"></i>
+                            <div>
+                                <h3 class="text-xl font-serif tracking-tight mb-2">LLM Jailbreak Detector</h3>
+                                <div class="flex space-x-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-muted border border-borderLight px-2 py-1">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm text-muted font-light leading-relaxed group-hover:text-light transition-colors">
+                            LLM Jailbreak Detection System — ML classifier for detecting adversarial prompts. 99.3%
+                            F1-score. FastAPI + Streamlit demo.</p>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="https://github.com/Ch-Suharsha/financial-data-pipeline" target="_blank"
+                        class="group block cursor-pointer">
+                        <div
+                            class="aspect-[4/3] w-full bg-[#111] luxury-border-t luxury-border-b border-borderLight mb-6 p-8 flex flex-col justify-between group-hover:bg-[#151515] transition-colors relative overflow-hidden">
+                            <i data-lucide="database"
+                                class="w-8 h-8 text-muted group-hover:text-light transition-colors"></i>
+                            <div>
+                                <h3 class="text-xl font-serif tracking-tight mb-2">Financial Data Pipeline</h3>
+                                <div class="flex space-x-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-muted border border-borderLight px-2 py-1">Python</span>
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-muted border border-borderLight px-2 py-1">Data</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm text-muted font-light leading-relaxed group-hover:text-light transition-colors">
+                            End-to-end real-time financial transaction pipeline infrastructure and data engineering.</p>
+                    </a>
+
+                    <!-- Project 3 -->
+                    <a href="https://github.com/Ch-Suharsha/taskflow-analytics" target="_blank"
+                        class="group block cursor-pointer">
+                        <div
+                            class="aspect-[4/3] w-full bg-[#111] luxury-border-t luxury-border-b border-borderLight mb-6 p-8 flex flex-col justify-between group-hover:bg-[#151515] transition-colors relative overflow-hidden">
+                            <i data-lucide="bar-chart-2"
+                                class="w-8 h-8 text-muted group-hover:text-light transition-colors"></i>
+                            <div>
+                                <h3 class="text-xl font-serif tracking-tight mb-2">Taskflow Analytics</h3>
+                                <div class="flex space-x-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-muted border border-borderLight px-2 py-1">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm text-muted font-light leading-relaxed group-hover:text-light transition-colors">
+                            Data analytics application for task and workflow monitoring.</p>
+                    </a>
+
+                    <!-- Project 4 -->
+                    <a href="https://github.com/Ch-Suharsha/etl-data-warehouse" target="_blank"
+                        class="group block cursor-pointer">
+                        <div
+                            class="aspect-[4/3] w-full bg-[#111] luxury-border-t luxury-border-b border-borderLight mb-6 p-8 flex flex-col justify-between group-hover:bg-[#151515] transition-colors relative overflow-hidden">
+                            <i data-lucide="server"
+                                class="w-8 h-8 text-muted group-hover:text-light transition-colors"></i>
+                            <div>
+                                <h3 class="text-xl font-serif tracking-tight mb-2">ETL Data Warehouse</h3>
+                                <div class="flex space-x-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-muted border border-borderLight px-2 py-1">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm text-muted font-light leading-relaxed group-hover:text-light transition-colors">
+                            Scalable automated ETL integration workflows for modern data warehousing.</p>
+                    </a>
+
+                    <!-- Project 5 -->
+                    <a href="https://github.com/Ch-Suharsha/devops-copilot" target="_blank"
+                        class="group block cursor-pointer">
+                        <div
+                            class="aspect-[4/3] w-full bg-[#111] luxury-border-t luxury-border-b border-borderLight mb-6 p-8 flex flex-col justify-between group-hover:bg-[#151515] transition-colors relative overflow-hidden">
+                            <i data-lucide="terminal"
+                                class="w-8 h-8 text-muted group-hover:text-light transition-colors"></i>
+                            <div>
+                                <h3 class="text-xl font-serif tracking-tight mb-2">DevOps Copilot</h3>
+                                <div class="flex space-x-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-muted border border-borderLight px-2 py-1">TypeScript</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm text-muted font-light leading-relaxed group-hover:text-light transition-colors">
+                            Automated devops assistance tool connecting development workflows.</p>
+                    </a>
+
+                    <!-- Project 6 -->
+                    <a href="https://github.com/Ch-Suharsha/Ch-Suharsha-youtube-transcript-summarizer-comments-analyzer"
+                        target="_blank" class="group block cursor-pointer">
+                        <div
+                            class="aspect-[4/3] w-full bg-[#111] luxury-border-t luxury-border-b border-borderLight mb-6 p-8 flex flex-col justify-between group-hover:bg-[#151515] transition-colors relative overflow-hidden">
+                            <i data-lucide="youtube"
+                                class="w-8 h-8 text-muted group-hover:text-light transition-colors"></i>
+                            <div>
+                                <h3 class="text-xl font-serif tracking-tight mb-2">YT Transcript Summarizer</h3>
+                                <div class="flex space-x-2">
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-muted border border-borderLight px-2 py-1">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm text-muted font-light leading-relaxed group-hover:text-light transition-colors">
+                            NLP summarization of YouTube transcripts and sentiment analysis on comments.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Hire Me CTA & Footer -->
+    <footer id="contact"
+        class="px-6 md:px-12 py-32 pb-12 flex flex-col relative overflow-hidden bg-light dark:bg-dark transition-colors duration-500">
+        <!-- Giant Background Text -->
+        <div
+            class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none overflow-hidden">
+            <h2
+                class="text-[20vw] font-serif tracking-tighter whitespace-nowrap leading-none text-dark dark:text-light">
+                LET'S TALK</h2>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto w-full flex flex-col items-center text-center relative z-10 py-24 border-b luxury-border-b mb-12">
+            <p class="text-xs uppercase tracking-widest text-muted mb-6">Seeking New Grad SWE/AI Roles 2026</p>
+            <h2 class="text-4xl md:text-7xl font-serif tracking-tight mb-12 text-dark dark:text-light">
+                Are you interested in <br /><em
+                    class="italic text-muted hover:text-dark dark:hover:text-light transition-colors cursor-pointer">hiring
+                    me?</em>
+            </h2>
+            <a href="mailto:harshacheedalla007@gmail.com"
+                class="px-12 py-5 border border-dark text-dark hover:bg-dark hover:text-light dark:border-light dark:text-light text-sm uppercase tracking-widest dark:hover:bg-light dark:hover:text-dark transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                Reach Out
+            </a>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center text-xs text-muted uppercase tracking-widest">
+            <p>&copy; 2026 Suharsha Cheedalla.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://github.com/Ch-Suharsha" target="_blank"
+                    class="hover:text-light transition-colors cursor-pointer">GitHub</a>
+                <a href="https://www.linkedin.com/in/suharshacheedalla" target="_blank"
+                    class="hover:text-light transition-colors cursor-pointer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Actions (Vansh Inspiration) -->
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+        <a href="mailto:harshacheedalla007@gmail.com" aria-label="Email Me"
+            class="w-12 h-12 flex items-center justify-center rounded-full bg-light dark:bg-dark border border-borderDark dark:border-borderLight shadow-lg shadow-black/10 text-dark dark:text-light hover:scale-110 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+            <i data-lucide="mail" class="w-5 h-5 group-hover:block hidden absolute"></i>
+            <i data-lucide="mail" class="w-5 h-5 group-hover:hidden block absolute"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/suharshacheedalla" target="_blank" aria-label="LinkedIn"
+            class="w-12 h-12 flex items-center justify-center rounded-full bg-light dark:bg-dark border border-borderDark dark:border-borderLight shadow-lg shadow-black/10 text-dark dark:text-light hover:scale-110 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+            <i data-lucide="linkedin" class="w-5 h-5 group-hover:text-blue-600 transition-colors"></i>
+        </a>
+    </div>
+
+    <!-- Initialize Script -->
+    <script>
+        lucide.createIcons();
+
+        // Dark Mode Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved user preference, if any, on load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        // Listen for toggle button click
+        themeToggleBtn.addEventListener('click', function () {
+            htmlElement.classList.toggle('dark');
+
+            // Save preference to local storage
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vansh Rewaskar | AI Systems Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              arial: ['Arial', 'Helvetica', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03)',
+              'hard': '0 20px 40px -10px rgba(0, 0, 0, 0.1)',
+              'blue-glow': '0 0 25px 5px rgba(59, 130, 246, 0.4)',
+              'blue-base': '0 0 15px rgba(59, 130, 246, 0.2)',
+              'green-hover': '0 0 20px rgba(16, 185, 129, 0.5)',
+              'tactical': '0 0 0 1px rgba(59, 130, 246, 0.1), 0 20px 50px -12px rgba(0, 0, 0, 0.5)',
+            },
+            borderRadius: {
+                'pro': '0.75rem',
+                'tactical': '0.5rem',
+            }
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-font-smoothing: antialiased;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #f1f5f9;
+        }
+        .light body {
+            background-color: #fdfdfd;
+            color: #1e293b;
+        }
+        
+        /* Tactical Slide-Fade for ">>" with expansion effect */
+        @keyframes slide-flow {
+          0% { transform: translate(-30px, -30px) scale(0.8); opacity: 0; }
+          100% { transform: translate(0, 0) scale(1.2); opacity: 1; }
+        }
+        .animate-tactical-connect {
+          animation: slide-flow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Snowflake: Professional Geometric Architecture */
+        @keyframes snowflake-breathe {
+          0%, 100% { 
+            clip-path: circle(20% at 50% 50%); 
+            opacity: 0.1;
+            transform: scale(0.9) rotate(0deg);
+          }
+          50% { 
+            clip-path: circle(150% at 50% 50%); 
+            opacity: 1;
+            transform: scale(1.1) rotate(45deg);
+          }
+        }
+        .branch-overlay {
+          position: absolute;
+          inset: 0;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='white' stroke-width='0.4' fill='none'%3E%3Cpath d='M50 50 L50 10 M50 20 L42 15 M50 20 L58 15 M50 35 L40 30 M50 35 L60 30'/%3E%3Cpath d='M50 50 L50 90 M50 80 L42 85 M50 80 L58 85 M50 65 L40 70 M50 65 L60 70'/%3E%3Cpath d='M50 50 L84.6 30 M76 35 L70 25 M76 35 L85 40 M63 42 L55 35 M63 42 L65 48'/%3E%3Cpath d='M50 50 L15.4 70 M24 65 L30 75 M24 65 L15 60 M37 58 L45 65 M37 58 L35 52'/%3E%3Cpath d='M50 50 L84.6 70 M76 65 L85 60 M76 65 L70 75 M63 58 L65 52 M63 58 L55 65'/%3E%3Cpath d='M50 50 L15.4 30 M24 35 L15 40 M24 35 L30 25 M37 42 L35 48 M37 42 L45 35'/%3E%3C/g%3E%3C/svg%3E");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          pointer-events: none;
+        }
+
+        .group:hover .branch-overlay {
+          opacity: 0.9;
+          animation: snowflake-breathe 4s infinite linear;
+        }
+
+        @keyframes particle-explode {
+          0% { transform: translate(0, 0) scale(0.3) rotate(0); opacity: 1; }
+          15% { opacity: 1; }
+          100% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) scale(1.6) rotate(var(--tw-rotate)); opacity: 0; }
+        }
+        .particle {
+          position: absolute;
+          pointer-events: none;
+          z-index: 60;
+          animation: particle-explode 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+        }
+
+        /* Modal Reveal: Smooth scale-up and fade-in */
+        @keyframes modal-reveal {
+          0% { opacity: 0; transform: scale(0.95) translateY(30px); filter: blur(10px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+        .animate-modal {
+          animation: modal-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .glass-morphism-dark {
+          background: rgba(15, 23, 42, 0.85);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        .dark ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+    </style>
+
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/AI_Engineer_portfolio/assets/index-DMroTZX_.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

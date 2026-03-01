@@ -1,0 +1,719 @@
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suharsha Cheedalla - Portfolio</title>
+    <meta name="description" content="Suharsha Cheedalla - AI Engineer portfolio.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#111111',
+                        light: '#FFFFFF',
+                        muted: '#666666',
+                        mutedDark: '#a1a1aa',
+                        borderLight: 'rgba(0, 0, 0, 0.08)',
+                        borderDark: 'rgba(255, 255, 255, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #111111;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .dark body {
+            background-color: #111111;
+            color: #FFFFFF;
+        }
+
+        ::selection {
+            background: #111111;
+            color: #FFFFFF;
+        }
+
+        .dark ::selection {
+            background: #FFFFFF;
+            color: #111111;
+        }
+    </style>
+</head>
+
+<body
+    class="antialiased font-sans flex flex-col min-h-screen selection:bg-dark selection:text-light dark:selection:bg-light dark:selection:text-dark">
+
+    <!-- Navigation -->
+    <nav
+        class="w-full px-6 py-6 md:px-16 flex justify-between items-center fixed top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-lg border-b border-borderLight dark:border-borderDark transition-colors duration-500">
+        <a href="#"></a>
+        <div class="hidden md:flex space-x-10 text-sm font-medium items-center text-muted dark:text-mutedDark">
+            <a href="#about"
+                class="hover-line hover:text-dark dark:hover:text-light transition-colors cursor-pointer">About</a>
+            <a href="#experience"
+                class="hover-line hover:text-dark dark:hover:text-light transition-colors cursor-pointer">Experience</a>
+            <a href="#work"
+                class="hover-line hover:text-dark dark:hover:text-light transition-colors cursor-pointer">Projects</a>
+            <a href="#contact" class="hover-line text-dark dark:text-light transition-colors cursor-pointer">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle"
+                class="cursor-pointer text-muted dark:text-mutedDark hover:text-dark dark:hover:text-light transition-colors"
+                aria-label="Toggle Dark Mode">
+                <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+            </button>
+            <button id="open-hire-modal"
+                class="text-sm font-medium border border-dark dark:border-light rounded-full px-6 py-2.5 hover:bg-dark hover:text-white dark:hover:bg-light dark:hover:text-dark dark:text-light transition-all duration-300 cursor-pointer flex items-center gap-2">
+                Hire Me
+            </button>
+        </div>
+        <div class="flex items-center space-x-4 md:hidden">
+            <button id="theme-toggle-mobile" class="cursor-pointer text-muted dark:text-mutedDark">
+                <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+            </button>
+            <button>
+                <i data-lucide="menu" class="w-6 h-6 dark:text-light"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="about"
+        class="pt-40 pb-20 px-6 md:px-16 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 min-h-[90vh]">
+        <div class="w-full md:w-1/2 flex flex-col justify-center order-2 md:order-1">
+            <div
+                class="inline-flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-4 py-1.5 rounded-full text-sm font-medium mb-8 w-max">
+                <span>Seeking New Grad SWE/AI Roles 2026</span>
+            </div>
+
+            <h1
+                class="text-5xl md:text-7xl font-serif font-medium leading-[1.1] tracking-tight mb-6 text-dark dark:text-light">
+                Suharsha <span class="font-serif italic text-gray-400 dark:text-gray-500 font-light">Cheedalla.</span>
+            </h1>
+
+            <p class="text-lg text-muted dark:text-mutedDark max-w-lg leading-relaxed mb-10">
+                I'm an AI Engineer and MS Applied Data Science student at SJSU. I specialize in architecting scalable
+                backend systems and deploying reliable machine learning solutions.
+            </p>
+
+            <div class="flex items-center space-x-6">
+                <a href="#contact"
+                    class="bg-dark text-white hover:bg-gray-800 dark:bg-light dark:text-dark dark:hover:bg-gray-200 px-8 py-3.5 rounded-full font-medium transition-colors shadow-lg shadow-black/10 cursor-pointer">
+                    Get in touch
+                </a>
+                <a href="https://github.com/Ch-Suharsha" target="_blank"
+                    class="flex items-center text-dark dark:text-light font-medium hover-line cursor-pointer">
+                    <i data-lucide="github" class="w-5 h-5 mr-2"></i> GitHub
+                </a>
+            </div>
+        </div>
+
+        <!-- Elegant Profile Image Presentation -->
+        <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center relative mt-8 md:mt-0 p-4">
+            <div class="absolute inset-4 bg-gray-100 dark:bg-gray-900 rounded-[3rem] blur-3xl opacity-50 -z-10"></div>
+            <!-- Tall Rounded Rectangle Portrait (Vansh Style) -->
+            <div
+                class="w-full max-w-xs md:max-w-sm lg:max-w-md aspect-[3/4] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl transition-all">
+                <img src="vansh_style_profile.jpg" alt="Suharsha Cheedalla"
+                    class="w-full h-full object-cover object-top filter grayscale contrast-125 brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-700"
+                    onerror="this.src='https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1000&auto=format&fit=crop'; this.alt='Profile placeholder';">
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full">
+
+        <!-- Skills Banner -->
+        <section class="border-y border-borderLight py-8 bg-gray-50 flex overflow-hidden">
+            <div
+                class="flex space-x-12 animate-[marquee_25s_linear_infinite] whitespace-nowrap min-w-full justify-around items-center px-6">
+                <div class="flex items-center space-x-2 text-muted font-medium"><i data-lucide="code"
+                        class="w-5 h-5"></i><span>Python</span></div>
+                <div class="flex items-center space-x-2 text-muted font-medium"><i data-lucide="brain"
+                        class="w-5 h-5"></i><span>PyTorch</span></div>
+                <div class="flex items-center space-x-2 text-muted font-medium"><i data-lucide="bot"
+                        class="w-5 h-5"></i><span>GenAI</span></div>
+                <div class="flex items-center space-x-2 text-muted font-medium"><i data-lucide="server"
+                        class="w-5 h-5"></i><span>MLOps</span></div>
+                <div class="flex items-center space-x-2 text-muted font-medium"><i data-lucide="database"
+                        class="w-5 h-5"></i><span>PostgreSQL</span></div>
+                <div class="flex items-center space-x-2 text-muted font-medium"><i data-lucide="box"
+                        class="w-5 h-5"></i><span>Docker & Kubernetes</span></div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section id="stack" class="pt-32 pb-16 px-6 md:px-16 max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+                <div>
+                    <h2
+                        class="text-4xl md:text-5xl font-serif text-dark dark:text-light font-bold uppercase tracking-tight mb-4 text-center md:text-left">
+                        Stack
+                        <span class="block w-16 h-1.5 bg-dark dark:bg-light mt-4 mx-auto md:mx-0"></span>
+                    </h2>
+                    <p class="text-[10px] font-mono tracking-[0.2em] text-gray-400 uppercase text-center md:text-left">
+                        Toolkit V2025.01
+                    </p>
+                </div>
+
+                <!-- 2x2 Grid for Stack Categories -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full md:w-3/4">
+
+                    <!-- Category 1: AI Systems Engineering -->
+                    <div
+                        class="bg-white dark:bg-[#0a0c10] border border-borderLight dark:border-white/5 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                        <h3
+                            class="text-xs font-mono tracking-[0.15em] text-dark dark:text-light font-semibold uppercase mb-6">
+                            AI Systems Engineering
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Generative
+                                AI</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">LangChain</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">RAG
+                                Pipelines</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">LLM
+                                Orchestration</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Python</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Cloud Infrastructure -->
+                    <div
+                        class="bg-white dark:bg-[#0a0c10] border border-borderLight dark:border-white/5 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                        <h3
+                            class="text-xs font-mono tracking-[0.15em] text-dark dark:text-light font-semibold uppercase mb-6">
+                            Cloud Infrastructure
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">AWS
+                                (Bedrock, SageMaker)</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">CloudWatch</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">MLOps</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Analytical Intelligence -->
+                    <div
+                        class="bg-white dark:bg-[#0a0c10] border border-borderLight dark:border-white/5 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                        <h3
+                            class="text-xs font-mono tracking-[0.15em] text-dark dark:text-light font-semibold uppercase mb-6">
+                            Analytical Intelligence
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">SQL
+                                Performance</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Data
+                                Visualization</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Looker
+                                Studio</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Predictive
+                                Modeling</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">ETL</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Data Engineering -->
+                    <div
+                        class="bg-white dark:bg-[#0a0c10] border border-borderLight dark:border-white/5 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                        <h3
+                            class="text-xs font-mono tracking-[0.15em] text-dark dark:text-light font-semibold uppercase mb-6">
+                            Data Engineer Stack
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Apache
+                                Spark</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Kafka</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Airflow</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">dbt</span>
+                            <span
+                                class="px-4 py-2 text-sm font-medium text-dark dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-transparent dark:border-white/10 rounded-full">Snowflake</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="pt-32 pb-8 px-6 md:px-16 max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-sm font-medium uppercase tracking-widest text-gray-400 mb-2 block">Career</span>
+                <h2 class="text-4xl font-serif text-dark dark:text-light font-medium">Professional Experience</h2>
+            </div>
+
+            <div
+                class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 dark:before:via-gray-800 before:to-transparent">
+
+
+                <!-- SJSU -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-dark text-gray-500 dark:text-gray-400 group-hover:text-dark dark:group-hover:text-light group-hover:border-dark dark:group-hover:border-light shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm transition-colors z-10">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-borderLight dark:border-borderDark bg-white dark:bg-[#151515] shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-xl font-medium text-dark dark:text-light">MS Applied Data
+                                Intelligence</h3>
+                            <span class="text-xs font-medium text-gray-400">2024 - Present</span>
+                        </div>
+                        <p class="text-sm text-dark dark:text-light font-medium mb-3">San José State University</p>
+                        <p class="text-sm text-muted dark:text-mutedDark leading-relaxed">
+                            Mastering advanced LLMs, RAG architectures, and deploying AI systems at scale. Also managing
+                            university operations as a Student Assistant.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- YT Transcript Summarizer Project -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-dark text-gray-500 dark:text-gray-400 group-hover:text-dark dark:group-hover:text-light group-hover:border-dark dark:group-hover:border-light shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm transition-colors z-10">
+                        <i data-lucide="youtube" class="w-4 h-4"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-borderLight dark:border-borderDark bg-white dark:bg-[#151515] shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-xl font-medium text-dark dark:text-light">YT Transcript
+                                Summarizer</h3>
+                            <span class="text-xs font-medium text-gray-400">2023</span>
+                        </div>
+                        <p class="text-sm text-dark dark:text-light font-medium mb-3">GITAM Deemed to be University</p>
+                        <p class="text-sm text-muted dark:text-mutedDark leading-relaxed">
+                            Built an automated NLP pipeline for summarization and sentiment analysis of video comments
+                            using NLTK and TextBlob. Engineered data ingestion with the YouTube Data API to analyze
+                            high-volume video transcripts and comments. Developed a full-stack Flask application with a
+                            MySQL database to construct a user-friendly analysis dashboard.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- VENHAN -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-dark text-gray-500 dark:text-gray-400 group-hover:text-dark dark:group-hover:text-light group-hover:border-dark dark:group-hover:border-light shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm transition-colors z-10">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-borderLight dark:border-borderDark bg-white dark:bg-[#151515] shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-xl font-medium text-dark dark:text-light">ML Engineer Intern</h3>
+                            <span class="text-xs font-medium text-gray-400">2022 - 2024</span>
+                        </div>
+                        <p class="text-sm text-dark dark:text-light font-medium mb-3">VENHAN</p>
+                        <p class="text-sm text-muted dark:text-mutedDark leading-relaxed">
+                            Architected scalable ML systems and engineered production pipelines for computer vision
+                            models (90%+ accuracy). Built core APIs and multimodal datasets parsing 50GB+ of data.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BTech -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-dark text-gray-500 dark:text-gray-400 group-hover:text-dark dark:group-hover:text-light group-hover:border-dark dark:group-hover:border-light shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm transition-colors z-10">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-borderLight dark:border-borderDark bg-white dark:bg-[#151515] shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-xl font-medium text-dark dark:text-light">BTech in Computer
+                                Science</h3>
+                            <span class="text-xs font-medium text-gray-400">Graduated</span>
+                        </div>
+                        <p class="text-sm text-dark dark:text-light font-medium mb-3">GITAM Deemed University</p>
+                        <p class="text-sm text-muted dark:text-mutedDark leading-relaxed">
+                            Formed a strong foundation in core computer science, systems building, and networking
+                            infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Right Aligned 14-word AI Systems statement -->
+        <div class="max-w-5xl mx-auto px-6 md:px-16 flex justify-end pb-32">
+            <p
+                class="text-lg md:text-xl font-serif leading-relaxed text-dark dark:text-light transition-colors text-right max-w-sm italic">
+                Deploy robust, production-ready AI systems from core networks, scalable MLOps, MNTL, and RAG
+                architectures.
+            </p>
+        </div>
+
+        <!-- Selected Works (GitHub) -->
+        <section id="work"
+            class="py-32 px-6 md:px-16 bg-gray-50 dark:bg-[#0a0a0a] border-y border-borderLight dark:border-borderDark transition-colors">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span
+                        class="text-sm font-medium uppercase tracking-widest text-gray-400 mb-2 block">Portfolio</span>
+                    <h2 class="text-4xl font-serif text-dark dark:text-light font-medium mb-6">Open Source Projects</h2>
+                    <a href="https://github.com/Ch-Suharsha" target="_blank"
+                        class="inline-flex items-center text-sm font-medium hover-line text-dark dark:text-light cursor-pointer">
+                        View profile on GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card Template -->
+
+                    <a href="https://github.com/Ch-Suharsha/llm-jailbreak-detector" target="_blank"
+                        class="group bg-white dark:bg-[#111] p-8 rounded-2xl border border-borderLight dark:border-borderDark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full transform hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-dark dark:text-light mb-6 group-hover:bg-dark group-hover:text-white dark:group-hover:bg-light dark:group-hover:text-dark transition-colors">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3 text-dark dark:text-light transition-colors">
+                            LLM Jailbreak Detector</h3>
+                        <p class="text-muted dark:text-mutedDark text-sm leading-relaxed mb-6 flex-grow">ML classifier
+                            for detecting
+                            adversarial prompts. 99.3% F1-score. FastAPI + Streamlit demo.</p>
+                        <div class="text-xs font-medium text-gray-400 uppercase tracking-wider">Python &bull; ML</div>
+                    </a>
+
+                    <a href="https://github.com/Ch-Suharsha/financial-data-pipeline" target="_blank"
+                        class="group bg-white dark:bg-[#111] p-8 rounded-2xl border border-borderLight dark:border-borderDark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full transform hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-dark dark:text-light mb-6 group-hover:bg-dark group-hover:text-white dark:group-hover:bg-light dark:group-hover:text-dark transition-colors">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3 text-dark dark:text-light transition-colors">
+                            Financial Data Pipeline</h3>
+                        <p class="text-muted dark:text-mutedDark text-sm leading-relaxed mb-6 flex-grow">End-to-end
+                            real-time financial
+                            transaction pipeline infrastructure built on Python.</p>
+                        <div class="text-xs font-medium text-gray-400 uppercase tracking-wider">Python &bull; Data Eng
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Ch-Suharsha/taskflow-analytics" target="_blank"
+                        class="group bg-white dark:bg-[#111] p-8 rounded-2xl border border-borderLight dark:border-borderDark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full transform hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-dark dark:text-light mb-6 group-hover:bg-dark group-hover:text-white dark:group-hover:bg-light dark:group-hover:text-dark transition-colors">
+                            <i data-lucide="pie-chart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3 text-dark dark:text-light transition-colors">
+                            Taskflow Analytics</h3>
+                        <p class="text-muted dark:text-mutedDark text-sm leading-relaxed mb-6 flex-grow">Data analytics
+                            application enabling
+                            better tracking of tasks and workflows.</p>
+                        <div class="text-xs font-medium text-gray-400 uppercase tracking-wider">Python Tracking</div>
+                    </a>
+
+                    <a href="https://github.com/Ch-Suharsha/etl-data-warehouse" target="_blank"
+                        class="group bg-white dark:bg-[#111] p-8 rounded-2xl border border-borderLight dark:border-borderDark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full transform hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-dark dark:text-light mb-6 group-hover:bg-dark group-hover:text-white dark:group-hover:bg-light dark:group-hover:text-dark transition-colors">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3 text-dark dark:text-light transition-colors">
+                            ETL Data Warehouse</h3>
+                        <p class="text-muted dark:text-mutedDark text-sm leading-relaxed mb-6 flex-grow">Integration of
+                            scalable automated
+                            ETL workflows into modern data warehouses.</p>
+                        <div class="text-xs font-medium text-gray-400 uppercase tracking-wider">Python architecture
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Ch-Suharsha/devops-copilot" target="_blank"
+                        class="group bg-white dark:bg-[#111] p-8 rounded-2xl border border-borderLight dark:border-borderDark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full transform hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-dark dark:text-light mb-6 group-hover:bg-dark group-hover:text-white dark:group-hover:bg-light dark:group-hover:text-dark transition-colors">
+                            <i data-lucide="terminal-square" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3 text-dark dark:text-light transition-colors">
+                            DevOps Copilot</h3>
+                        <p class="text-muted dark:text-mutedDark text-sm leading-relaxed mb-6 flex-grow">An automated,
+                            scriptable layer for
+                            simplifying DevOps operations.</p>
+                        <div class="text-xs font-medium text-gray-400 uppercase tracking-wider">TypeScript</div>
+                    </a>
+
+                    <a href="https://github.com/Ch-Suharsha/Ch-Suharsha-youtube-transcript-summarizer-comments-analyzer"
+                        target="_blank"
+                        class="group bg-white dark:bg-[#111] p-8 rounded-2xl border border-borderLight dark:border-borderDark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full transform hover:-translate-y-1">
+                        <div
+                            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-dark dark:text-light mb-6 group-hover:bg-dark group-hover:text-white dark:group-hover:bg-light dark:group-hover:text-dark transition-colors">
+                            <i data-lucide="youtube" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3 text-dark dark:text-light transition-colors">
+                            YT Transcript Summarizer</h3>
+                        <p class="text-muted dark:text-mutedDark text-sm leading-relaxed mb-6 flex-grow">Automated NLP
+                            pipeline for
+                            summarization and sentiment analysis of video comments.</p>
+                        <div class="text-xs font-medium text-gray-400 uppercase tracking-wider">Python NLP</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Hire Me CTA & Footer -->
+    <footer id="contact"
+        class="px-6 md:px-16 pt-32 pb-12 flex flex-col relative overflow-hidden bg-white dark:bg-dark transition-colors duration-500">
+
+        <div
+            class="max-w-4xl mx-auto w-full flex flex-col items-center text-center relative z-10 py-12 mb-20 bg-gray-50 dark:bg-[#111] transition-colors rounded-[3rem] border border-borderLight dark:border-borderDark p-10 md:p-20 shadow-sm">
+            <div
+                class="w-16 h-16 bg-dark/5 dark:bg-light/10 text-dark dark:text-light rounded-full flex items-center justify-center mb-8">
+                <i data-lucide="mail-plus" class="w-8 h-8"></i>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-serif text-dark dark:text-light font-medium leading-tight mb-6">
+                Are you interested in <br /><span class="italic text-gray-400 dark:text-gray-500">hiring me?</span>
+            </h2>
+            <p class="text-muted dark:text-mutedDark mb-10 max-w-lg mx-auto">
+                Currently seeking New Grad SWE/AI Engineer roles starting Summer 2026. Let's build cutting edge ML
+                applications together.
+            </p>
+            <button onclick="openModal(event)"
+                class="px-10 py-4 bg-dark text-white hover:bg-gray-800 dark:bg-light dark:text-dark dark:hover:bg-gray-200 rounded-full font-medium transition-all duration-300 shadow-xl shadow-dark/20 cursor-pointer transform hover:-translate-y-1">
+                Initialize Contact
+            </button>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center text-sm font-medium text-muted dark:text-mutedDark border-t border-borderLight dark:border-borderDark pt-8">
+            <p>&copy; 2026 Suharsha Cheedalla.</p>
+            <div class="flex space-x-8 mt-4 md:mt-0">
+                <a href="https://github.com/Ch-Suharsha" target="_blank"
+                    class="hover-line text-dark dark:text-light cursor-pointer">GitHub</a>
+                <a href="https://www.linkedin.com/in/suharsha-cheedalla" target="_blank"
+                    class="hover-line text-dark dark:text-light cursor-pointer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Actions (Vansh Inspiration) -->
+    <div class="fixed bottom-8 right-8 z-40 flex flex-col gap-4">
+        <a href="mailto:harshacheedalla007@gmail.com" aria-label="Email Me"
+            class="w-12 h-12 flex items-center justify-center rounded-full bg-dark dark:bg-light border border-dark dark:border-light shadow-lg shadow-black/20 text-light dark:text-dark hover:scale-110 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+            <i data-lucide="mail" class="w-5 h-5 group-hover:block hidden absolute"></i>
+            <i data-lucide="mail" class="w-5 h-5 group-hover:hidden block absolute"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/suharsha-cheedalla" target="_blank" aria-label="LinkedIn"
+            class="w-12 h-12 flex items-center justify-center rounded-full bg-dark dark:bg-light border border-dark dark:border-light shadow-lg shadow-black/20 text-light dark:text-dark hover:scale-110 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+    </div>
+
+    <!-- Hire Me Modal (Vansh Clone) -->
+    <div id="hire-modal"
+        class="fixed inset-0 z-[100] bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 invisible transition-all duration-500">
+
+        <!-- Phase 1: Initializing Sequence -->
+        <div id="hire-modal-init"
+            class="absolute inset-0 flex items-center justify-center z-10 transition-all duration-300">
+            <div class="text-white font-mono tracking-[0.5em] text-sm md:text-base animate-pulse text-center px-4">
+                I N I T I A L I Z I N G&nbsp;&nbsp;&nbsp;I N T E R F A C E . . .
+            </div>
+        </div>
+
+        <!-- Phase 2: Main Modal Content -->
+        <div id="hire-modal-content"
+            class="w-full max-w-md bg-[#0a0c10] border border-white/5 rounded-[40px] shadow-2xl p-10 relative flex flex-col items-center transform scale-95 opacity-0 invisible transition-all duration-500 z-20">
+            <!-- Close Button -->
+            <button id="close-hire-modal"
+                class="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors cursor-pointer z-50">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Badge -->
+            <div
+                class="border border-blue-500/30 text-blue-400 text-[10px] font-mono tracking-widest px-4 py-1.5 rounded-full mb-8 uppercase bg-blue-500/5">
+                Authorized Access
+            </div>
+
+            <!-- Headline -->
+            <h2 class="text-3xl font-sans font-bold text-white mb-10 tracking-tight uppercase">Let's Connect...</h2>
+
+            <!-- Cards Container -->
+            <div class="w-full space-y-4">
+                <!-- Email -->
+                <a href="mailto:harshacheedalla007@gmail.com"
+                    class="group relative block w-full bg-[#111318] border border-white/5 hover:border-white/20 rounded-2xl p-5 transition-all duration-300 overflow-hidden cursor-pointer">
+                    <div class="relative flex justify-between items-center">
+                        <div>
+                            <div class="text-[10px] text-gray-400 font-mono tracking-widest uppercase mb-1">Email
+                                Protocol</div>
+                            <div class="text-white text-sm font-medium pr-4 break-all">harshacheedalla007@gmail.com
+                            </div>
+                        </div>
+                        <i data-lucide="mail"
+                            class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors shrink-0"></i>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/suharsha-cheedalla" target="_blank"
+                    class="group relative block w-full bg-[#111318] border border-white/5 hover:border-white/20 rounded-2xl p-5 transition-all duration-300 overflow-hidden cursor-pointer">
+                    <div class="relative flex justify-between items-center">
+                        <div>
+                            <div class="text-[10px] text-gray-400 font-mono tracking-widest uppercase mb-1">LinkedIn
+                                Profile</div>
+                            <div class="text-white text-sm font-medium">Suharsha Cheedalla</div>
+                        </div>
+                        <i data-lucide="linkedin"
+                            class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors shrink-0"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-10 tracking-widest text-[10px] text-gray-600 font-mono uppercase">
+                Secure Channel &bull; San Jose, CA
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Script -->
+    <script>
+        lucide.createIcons();
+
+        // Dark Mode Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const htmlElement = document.documentElement;
+
+        // Check for saved user preference, if any, on load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        // Toggle function
+        function toggleDark() {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        }
+
+        // Listen for toggle button click
+        themeToggleBtn.addEventListener('click', toggleDark);
+        if (themeToggleBtnMobile) {
+            themeToggleBtnMobile.addEventListener('click', toggleDark);
+        }
+
+        // Hire Modal Logic
+        const hireModal = document.getElementById('hire-modal');
+        const hireModalInit = document.getElementById('hire-modal-init');
+        const hireModalContent = document.getElementById('hire-modal-content');
+        const openHireModalBtn = document.getElementById('open-hire-modal');
+        const closeHireModalBtn = document.getElementById('close-hire-modal');
+        let initTimeout;
+
+        function openModal(e) {
+            e.preventDefault();
+            // Reset states
+            hireModal.classList.remove('opacity-0', 'invisible');
+
+            // Show init phase
+            hireModalInit.classList.remove('opacity-0', 'invisible');
+
+            // Hide content phase initially
+            hireModalContent.classList.remove('scale-100', 'opacity-100');
+            hireModalContent.classList.add('scale-95', 'opacity-0', 'invisible');
+
+            // Trigger transition after delay (1.3s)
+            clearTimeout(initTimeout);
+            initTimeout = setTimeout(() => {
+                // Fade out init text
+                hireModalInit.classList.add('opacity-0');
+
+                setTimeout(() => {
+                    hireModalInit.classList.add('invisible');
+                    // Fade in main modal
+                    hireModalContent.classList.remove('invisible');
+                    // Small delay to ensure display:block applies before animating opacity/transform
+                    setTimeout(() => {
+                        hireModalContent.classList.remove('scale-95', 'opacity-0');
+                        hireModalContent.classList.add('scale-100', 'opacity-100');
+                    }, 50);
+                }, 300); // 300ms fade out duration for text
+            }, 1300);
+        }
+
+        function closeModal(e) {
+            if (e) e.preventDefault();
+            clearTimeout(initTimeout);
+
+            // Hide the active content
+            hireModalContent.classList.remove('scale-100', 'opacity-100');
+            hireModalContent.classList.add('scale-95', 'opacity-0');
+
+            hireModalInit.classList.add('opacity-0');
+
+            // Hide backdrop
+            setTimeout(() => {
+                hireModal.classList.add('opacity-0', 'invisible');
+                hireModalContent.classList.add('invisible');
+                hireModalInit.classList.add('invisible');
+            }, 300);
+        }
+
+        if (openHireModalBtn) {
+            openHireModalBtn.addEventListener('click', openModal);
+        }
+
+        if (closeHireModalBtn) {
+            closeHireModalBtn.addEventListener('click', closeModal);
+        }
+    </script>
+</body>
+
+</html>
