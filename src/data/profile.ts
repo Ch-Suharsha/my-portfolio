@@ -1,3 +1,6 @@
+const base = import.meta.env.BASE_URL ?? "/";
+const cleanBase = base.endsWith("/") ? base : `${base}/`;
+
 export const profile = {
   name: "Suharsha Cheedalla",
   headline: "AI systems that hold up in production.",
@@ -8,7 +11,7 @@ export const profile = {
   photo: "/assets/profile/suharsha-profile.jpg",
   /** Square face-centered crop for small circular avatars. */
   photoHeadshot: "/assets/profile/suharsha-headshot.jpg",
-  resume: "/resume/Suharsha_Cheedalla_Resume.pdf",
+  resume: `${cleanBase}resume/Suharsha_Cheedalla_Resume.pdf`,
   openTo:
     "Open to AI Engineer, ML Engineer, and GenAI Engineer roles — building production LLM and agentic systems.",
   about:
