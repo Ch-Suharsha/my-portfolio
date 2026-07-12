@@ -43,7 +43,7 @@ export function Hero() {
         >
           <p className="inline-flex items-center gap-2.5 rounded-full border border-[#16181d]/15 bg-white/60 py-1.5 pr-4 pl-1.5 backdrop-blur">
             <img
-              src={profile.photoHeadshot}
+              src={`${import.meta.env.BASE_URL}${profile.photoHeadshot.startsWith('/') ? profile.photoHeadshot.slice(1) : profile.photoHeadshot}`}
               alt=""
               className="h-7 w-7 rounded-full object-cover"
               width={28}
@@ -106,7 +106,7 @@ export function Hero() {
           >
             <div className="overflow-hidden rounded-xl">
               <img
-                src={profile.photo}
+                src={`${import.meta.env.BASE_URL}${profile.photo.startsWith('/') ? profile.photo.slice(1) : profile.photo}`}
                 alt={`${profile.name} portrait`}
                 className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 width={288}

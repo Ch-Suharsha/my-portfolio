@@ -94,7 +94,7 @@ function ProjectPanel({ project, index }: { project: MainProject; index: number 
         </div>
         {image ? (
           <img
-            src={image.src}
+            src={`${import.meta.env.BASE_URL}${image.src.startsWith('/') ? image.src.slice(1) : image.src}`}
             alt={image.alt}
             className="aspect-[16/9] w-full rounded-lg object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
             loading={index === 0 ? "eager" : "lazy"}
