@@ -3,29 +3,30 @@
  * Every fact here is verified; the model is instructed to use nothing else.
  */
 export const KNOWLEDGE = `
-# Suharsha Cheedalla — Portfolio Knowledge Base (Data Analyst)
+# Suharsha Cheedalla — Portfolio Knowledge Base
 
 ## Identity and positioning
-- Name: Suharsha Cheedalla. Data Analyst / Product Analyst with an M.S. in Applied Data Intelligence from San Jose State University.
-- Core identity: turns complex data streams into clear, actionable business insights.
-- Primary positioning: Data Analyst, Product Analyst, or Operations Analyst.
-- Focus areas: SQL query design, Python/pandas data cleansing, statistical A/B testing, cohort/funnel conversions, and interactive BI dashboarding (Tableau, Streamlit).
-- Voice/Approach: direct, technically specific, slightly casual, zero corporate filler. No hype words. Leads with systems built and why they matter to the business decisions rather than his degree.
+- Name: Suharsha Cheedalla. AI Engineer with an M.S. in Applied Data Intelligence from San Jose State University.
+- Core identity: builds AI systems that hold up in production — efficient, measurable, and useful to the people relying on them.
+- Primary positioning: AI Engineer, GenAI Engineer, or ML Engineer.
+- Focus areas: Fine-tuning, retrieval (RAG), agent orchestration, and evaluation — shipped end to end and measured.
+- Voice/Approach: direct, technically specific, slightly casual, zero corporate filler. No hype words. Leads with systems built and why they matter to the workflow/business rather than his degree.
 
 ## Recruiter summary
-Strong fit for Data Analyst, Product Analyst, and Operations Analyst roles. Expert in querying relational databases (SQL), writing scripts to clean and model data (Python/pandas), conducting statistical hypothesis testing (A/B testing, Chi-Square, t-tests), and visualizing trends (Tableau, Streamlit). Backed by a solid engineering foundation (fast API services, caching, data schemas, Git/CI-CD).
+Strong fit for AI Engineer, GenAI Engineer, and ML Engineer roles. Expert in designing and implementing agentic workflows (LangGraph), semantic RAG pipelines over large datasets (Qdrant), model fine-tuning (QLoRA, Unsloth), and robust LLM evaluation frameworks (G-Eval). Backed by a solid software engineering foundation with professional internship experience (FastAPI microservices, concurrency, caching, CI/CD, and full-stack system observability).
 
 ## Location, availability, logistics
 - Based in San Jose, CA. Completed his MS in Applied Data Intelligence at SJSU in May 2026.
 - Work authorization: Authorized to work in the US on OPT. Recruiters should confirm specific sponsorship or long-term authorization details directly with him.
-- Open to full-time roles and relocation.
+- Open to full-time roles and relocation for the right role.
 - Work preference: Open to onsite, hybrid, or remote.
 - Contact: suharshacheedalla@gmail.com | (408) 549-4735.
+- Salary/compensation: Open to market-aligned compensation discussions; final compensation should be discussed directly.
 
-## Contact & Links
+## Contact
 - Email: suharshacheedalla@gmail.com
-- LinkedIn: https://www.linkedin.com/in/suharsha-cheedalla/
-- GitHub: https://github.com/Ch-Suharsha
+- LinkedIn: "Suharsha Cheedalla" — https://www.linkedin.com/in/suharsha-cheedalla/
+- GitHub: "Ch-Suharsha" — https://github.com/Ch-Suharsha
 - Resume PDF: https://ch-suharsha.github.io/resume/Suharsha_Cheedalla_Resume.pdf
 
 ## Education
@@ -45,36 +46,48 @@ Software Engineer Intern — Venhan Technologies (client: CHRIMS Inc.), Hyderaba
 
 ## Featured projects (Priority order)
 
-### 1. TaskFlow: Product Analytics Center (Flagship / Hero)
-- Repo: https://github.com/Ch-Suharsha/taskflow-analytics
-- Description: B2B SaaS product analytics tool measuring activation funnels, cohort retention decay, and A/B test onboarding flows.
-- Details: Analyzed 472K+ behavioral events and ran Chi-Square statistical tests comparing control vs variant onboarding layouts.
-- Metrics: 99.9% statistical confidence, +9.3% absolute conversion lift, 3.9x retention lift on time-tracking feature, and estimated $1.21M ARR roadmap impact.
-- Stack: SQL, Python, Pandas, Scipy, PostgreSQL, Streamlit, Git.
+### 1. Atlas: AI Customer Support Agent (Flagship / Hero)
+- Repo: https://github.com/Ch-Suharsha/atlas (master branch)
+- Description: Agentic customer-support system pairing a fine-tuned small language model (Phi-4-mini-instruct) with retrieval over 1.4M product records and a G-Eval evaluation harness.
+- Architecture: FastAPI backend, deterministic tool-routing across 8 domain tools, Qdrant vector database for semantic search, PostgreSQL for transactional state, and Docker Compose packaging.
+- Fine-Tuning: Benchmarked 4 small language models (Phi-4-mini, Qwen3-4B, LLaMA-3.2-3B, SmolLM3-3B) with QLoRA + Unsloth on support data; Phi-4-mini deployed as cloud/local switchable endpoint.
+- Metrics: 72.3% task success and 3.79/5 G-Eval across a 50-case suite (measuring relevance, faithfulness, completeness, and groundedness).
+- Stack: Python, FastAPI, Qdrant, PostgreSQL, QLoRA, Unsloth, HuggingFace, Docker.
 
-### 2. Hire Hangar: Marketplace Liquidity (Domain-Aligned)
-- Repo: https://github.com/Ch-Suharsha/staffing-marketplace-analytics
-- Description: Funnel conversions, operational latency, and screening A/B testing dashboard modeling a two-sided recruitment marketplace.
-- Details: Aggregated applicant stages (Applied -> Hired), calculated time-to-fill across departments, and ran Chi-Square validation comparing manual vs AI screening.
-- Metrics: +5.69% absolute screening lift, 99.99% statistical confidence, 12.17% referral yield rate (32x LinkedIn), 41.2 days average time-to-fill for Product roles.
-- Stack: SQL, Python, Pandas, Scipy, SQLite, Git.
+### 2. Tollgate: Cost-Aware LLM Router
+- Repo: https://github.com/Ch-Suharsha/tollgate
+- Description: LangGraph supervisor routing queries based on complexity to optimize LLM API costs.
+- Architecture: Zero-cost complexity classifier dispatches requests to right-sized models (with per-request override), FastAPI service with API-key auth, rate limiting, request validation middleware, Alembic migrations, database cost tracking, and GitHub Actions CI.
+- Metrics: 81.6% estimated inference cost reduction against an all-premium baseline on a 40-query eval set; 97.5% tier-adjacent routing accuracy.
+- Stack: Python, LangGraph, FastAPI, Groq, PostgreSQL, Alembic, Docker.
 
-### 3. Corporate Finance: Budget Dashboard (Visualization / BI)
-- Dashboard: Packed Tableau Workbook (.twbx) at "My Tableau Repository/Workbooks/CORPORATE FINANCE - Budget Controlling.twbx"
-- Description: Cost-center controlling and spending variance dashboard for corporate finance leaders.
-- Metrics: $12M total budget modeled, 14 Cost Centers tracked, 94.2% forecast accuracy achieved.
-- Stack: Tableau, Excel, Data Modeling.
+### 3. LLM Jailbreak Detector
+- Repo: https://github.com/Ch-Suharsha/llm-jailbreak-detector
+- Description: Scikit-learn/XGBoost binary classifier detecting adversarial jailbreak prompts.
+- Details: Extracts 397 features including 13 handcrafted signals (instruction-pattern counts, quote nesting depth, imperative-verb scoring). Served via API and Streamlit dashboard.
+- Metrics: 0.993 F1 on a 600-sample held-out test set; cross-validation and hyperparameter search comparison (LR vs RF vs XGBoost).
+- Stack: Python, scikit-learn, XGBoost, Streamlit.
 
 ## Secondary projects
 
-### 4. LLM Jailbreak Detector (Adversarial Data Classifier)
-- Repo: https://github.com/Ch-Suharsha/llm-jailbreak-detector
-- Description: Binary classifier detecting prompt injection attacks via 397 hand-crafted signals.
-- Metrics: 0.993 F1 score, Streamlit dashboard.
-- Stack: Python, Scikit-Learn, XGBoost, Streamlit.
+### 4. V.O.I.D (Voice Operated Insurance Dispute)
+- Repo: https://github.com/Ch-Suharsha/V.O.I.D
+- Description: Next.js app that extracts denial codes/doctor NPIs, audits specialties against the NPPES government registry, and generates ERISA appeal letters.
+- Stack: Next.js, TypeScript, Tailwind CSS, Gemini API, NPPES API.
 
-### 5. Financial Data Stream Pipeline (Data Engineering)
+### 5. Financial Data Pipeline
 - Repo: https://github.com/Ch-Suharsha/financial-data-pipeline
-- Description: Real-time stock transaction generator streaming to Kafka and processed via PySpark sliding-windows.
-- Stack: Kafka, PySpark, PostgreSQL, Prometheus, Grafana.
+- Description: Real-time stock transaction generator streaming to Apache Kafka, processed with PySpark sliding-window aggregations, stored in PostgreSQL, monitored with Prometheus/Grafana.
+- Stack: Python, Kafka, PySpark, PostgreSQL, Docker, Prometheus, Grafana.
+
+## Skills as three system layers
+1. AI & Machine Learning: LangGraph, LangChain, RAG, QLoRA/LoRA Fine-Tuning, HuggingFace, LLM Evaluation (G-Eval, Ragas), scikit-learn, XGBoost, PyTorch, Prompt Engineering.
+2. Software Engineering: Python, TypeScript/JavaScript, FastAPI, React, REST APIs, WebSockets, Docker, Pydantic, Pytest, CI/CD, Git/GitHub Actions.
+3. Cloud & Data Infrastructure: AWS (ECS, ECR, S3), PostgreSQL, Qdrant, Pinecone, Redis, Kafka, Prometheus, Grafana.
+
+## Certifications & Achievements
+- AWS Cloud Foundations Certified
+- Claude 101 Certified — Anthropic
+- Anthropic AI Fluency Certified — Anthropic
+- B.E.L.L.A x Mule Run Hackathon Winner
 `;

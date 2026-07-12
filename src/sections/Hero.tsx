@@ -5,9 +5,9 @@ import { MagneticButton } from "../components/ui/MagneticButton";
 import { profile } from "../data/profile";
 
 const STATS = [
-  { value: "3.9x", label: "TaskFlow Retention Lift" },
-  { value: "+5.69%", label: "Screening Lift" },
-  { value: "94.2%", label: "Forecast Accuracy" },
+  { value: "72.3%", label: "Atlas task success" },
+  { value: "81.6%", label: "Tollgate est. cost cut" },
+  { value: "0.993", label: "Jailbreak detector F1" },
 ];
 
 export function Hero() {
