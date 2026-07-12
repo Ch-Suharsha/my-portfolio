@@ -5,7 +5,7 @@ import { experience } from "../data/experience";
 import { profile } from "../data/profile";
 import { skillLayers } from "../data/skills";
 
-const ROLES = ["AI Engineer", "ML Engineer", "GenAI Engineer", "LLM Systems Engineer"];
+const ROLES = ["Data Analyst", "Product Analyst", "Operations Analyst", "Business Intelligence Analyst"];
 
 /** Act 4: about statement, the four working layers, education, and background. */
 export function Profile() {
@@ -16,7 +16,7 @@ export function Profile() {
       id="about"
       label="About"
       meta="04 / Profile"
-      title="System Architecture Layers"
+      title="Analytics Capabilities"
     >
       <Reveal>
         <p className="max-w-3xl font-display text-xl font-medium leading-snug text-[#16181d] sm:text-2xl">
@@ -45,7 +45,7 @@ export function Profile() {
               <div>
                 <p className="text-sm leading-relaxed text-[#4b4f58]">{layer.description}</p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
-                  {layer.tools.map((tool) => (
+                  {layer.tools.map((tool: string) => (
                     <Badge key={tool}>{tool}</Badge>
                   ))}
                 </div>

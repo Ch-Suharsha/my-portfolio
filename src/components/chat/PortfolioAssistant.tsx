@@ -289,7 +289,7 @@ export function PortfolioAssistant() {
 
               {showChips && (
                 <div className="flex flex-wrap gap-1.5 pt-1">
-                  {SUGGESTED_QUESTIONS.map((question) => (
+                  {SUGGESTED_QUESTIONS.map((question: string) => (
                     <button
                       key={question}
                       type="button"
