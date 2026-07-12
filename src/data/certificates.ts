@@ -1,0 +1,48 @@
+import type { Certificate } from "../types/portfolio";
+
+export const certificates: Certificate[] = [
+  {
+    id: "aws-cloud-foundations",
+    title: "AWS Cloud Foundations Certified",
+    issuer: "Amazon Web Services (AWS)",
+    category: "Cloud Infrastructure",
+    issuerTheme: "aws",
+    skillsGained: ["Cloud infrastructure", "Resource deployment", "Security best practices", "AWS service portfolio"],
+    toolsCovered: ["AWS Console", "IAM", "EC2", "S3", "VPC"],
+    roleRelevance: "Ensures foundational cloud platform knowledge for deploying and operating AI systems on AWS.",
+    verified: true,
+  },
+  {
+    id: "anthropic-claude-101",
+    title: "Claude 101 Certified",
+    issuer: "Anthropic",
+    category: "Generative AI",
+    issuerTheme: "anthropic",
+    skillsGained: ["Prompt design", "System prompts", "Context window optimization", "API integration"],
+    toolsCovered: ["Claude API", "Anthropic Console", "Workbench"],
+    roleRelevance: "Direct validation of core prompt engineering and LLM application design principles using Claude.",
+    verified: true,
+  },
+  {
+    id: "anthropic-ai-fluency",
+    title: "Anthropic AI Fluency Certified",
+    issuer: "Anthropic",
+    category: "Generative AI",
+    issuerTheme: "anthropic",
+    skillsGained: ["Model capabilities evaluation", "LLM safety features", "Anthropic models selection", "Agentic orchestration"],
+    toolsCovered: ["Claude 3.5 Sonnet", "Claude 3 Haiku", "Anthropic Developer Console"],
+    roleRelevance: "Confirms technical fluency with Claude's model family, latency-cost trade-offs, and safety tooling.",
+    verified: true,
+  },
+  {
+    id: "bella-x-mule-run-hackathon-winner",
+    title: "B.E.L.L.A x Mule Run Hackathon Winner",
+    issuer: "B.E.L.L.A x Mule Run",
+    category: "Hackathon Winner",
+    issuerTheme: "neutral",
+    skillsGained: ["Multi-agent system development", "Rapid prototyping", "Tool integration", "LLM orchestration"],
+    toolsCovered: ["LangGraph", "FastAPI", "Groq", "Llama models"],
+    roleRelevance: "Demonstrated capability to build and ship an award-winning agentic AI prototype under tight time constraints.",
+    verified: true,
+  },
+];
