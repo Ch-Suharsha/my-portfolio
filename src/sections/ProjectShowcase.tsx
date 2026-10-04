@@ -8,7 +8,7 @@ import { Reveal } from "../components/ui/Reveal";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import type { MainProject } from "../types/portfolio";
-import { mainProjects, secondaryProjects } from "../data/projects";
+import { orderedMainProjects, secondaryProjects } from "../data/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -149,8 +149,8 @@ export function ProjectShowcase() {
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             const current = Math.min(
-              mainProjects.length,
-              Math.floor(self.progress * mainProjects.length) + 1,
+              orderedMainProjects.length,
+              Math.floor(self.progress * orderedMainProjects.length) + 1,
             );
             if (counterRef.current) {
               counterRef.current.textContent = `0${current}`;
@@ -176,7 +176,7 @@ export function ProjectShowcase() {
             </h2>
           </Reveal>
           <div className="mt-14 space-y-20">
-            {mainProjects.map((project, index) => (
+            {orderedMainProjects.map((project, index) => (
               <Reveal key={project.id}>
                 <ProjectPanel project={project} index={index} />
               </Reveal>
@@ -199,7 +199,7 @@ export function ProjectShowcase() {
         </div>
 
         <div ref={trackRef} className="flex h-full items-center will-change-transform">
-          {mainProjects.map((project, index) => (
+          {orderedMainProjects.map((project, index) => (
             <div
               key={project.id}
               className="flex h-full w-screen shrink-0 items-center px-5 sm:px-8 lg:px-16"

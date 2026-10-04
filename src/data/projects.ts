@@ -431,6 +431,19 @@ export const mainProjects: MainProject[] = [
   },
 ];
 
+const featuredProjectOrder = [
+  "atlas",
+  "chain-logistics",
+  "issue-tracker",
+  "news-aggregator",
+  "tollgate",
+  "llm-jailbreak-detector",
+] as const;
+
+export const orderedMainProjects = featuredProjectOrder.map(
+  (id) => mainProjects.find((project) => project.id === id)!,
+);
+
 export const secondaryProjects: SecondaryProject[] = [
   {
     id: "void",
