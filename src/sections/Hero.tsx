@@ -7,7 +7,7 @@ import { profile } from "../data/profile";
 const STATS = [
   { value: "72.3%", label: "Atlas task success" },
   { value: "81.6%", label: "Tollgate est. cost cut" },
-  { value: "0.993", label: "Jailbreak detector F1" },
+  { value: "0%", label: "Issue Triage missed escalation" },
 ];
 
 export function Hero() {
