@@ -220,6 +220,215 @@ export const mainProjects: MainProject[] = [
     layout: "text-left",
     status: "complete",
   },
+  {
+    id: "chain-logistics",
+    title: "Cold-Chain Logistics Assistant",
+    recruiterTitle: "Permission-aware agent for telemetry, SOP guidance, and corridor weather",
+    hook: "A local Docker application that routes cold-chain questions across fleet telemetry, retrieved operating procedures, and live weather data while preserving a clear audit trail.",
+    problem:
+      "Logistics operators need fast answers across operational data and safety guidance, but an assistant must enforce data boundaries and make every tool call reviewable.",
+    data: "Cold-chain fleet telemetry in MySQL, SOP guidance indexed in local ChromaDB with BGE-M3 embeddings, and corridor weather from Open-Meteo.",
+    system:
+      "A Streamlit interface delegates to an orchestrator with separate tools for a restricted MySQL view, local ChromaDB retrieval, and weather lookup. A least-privilege chain_agent user reads fleet data and writes audit records, while chain_ingest handles ingestion.",
+    methods: [
+      "Tool-Routed Agent Workflow",
+      "Permission-Aware Data Access",
+      "Local Semantic Retrieval",
+      "Audit Logging",
+      "Containerized Development",
+    ],
+    outputs: [
+      "Streamlit logistics assistant",
+      "Restricted MySQL view and agent user",
+      "Local SOP retrieval index",
+      "Auditable tool-use records",
+    ],
+    reviewSupport: [
+      "Security boundary: agent reads only the v_agent_fleet view",
+      "Audit evidence: tool usage and status recorded in agent_audit_log",
+      "Verification: automated tests cover telemetry, SOP, weather, and out-of-scope requests",
+    ],
+    tools: ["Python", "Streamlit", "MySQL", "ChromaDB", "BGE-M3", "Docker", "Open-Meteo"],
+    skills: ["Agent Orchestration", "Data Access Controls", "RAG", "Operational Analytics", "Testing"],
+    metrics: [
+      {
+        label: "Data tools",
+        value: "3",
+        context: "telemetry, SOP retrieval, and corridor weather",
+        verified: true,
+      },
+      {
+        label: "DB roles",
+        value: "2",
+        context: "separate agent and ingestion permissions",
+        verified: true,
+      },
+      {
+        label: "Audit path",
+        value: "100%",
+        context: "agent requests record tool usage and status",
+        verified: true,
+      },
+    ],
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/Ch-Suharsha/chain-logistics",
+        type: "github",
+      },
+    ],
+    visualType: "pipeline",
+    visualAsset: "/assets/projects/chain-logistics/system-design.png",
+    visualAssets: [
+      {
+        src: "/assets/projects/chain-logistics/system-design.png",
+        alt: "Cold-Chain Logistics Assistant system design",
+      },
+    ],
+    layout: "text-left",
+    status: "complete",
+  },
+  {
+    id: "issue-tracker",
+    title: "Issue Triage",
+    recruiterTitle: "Human-in-the-loop GitHub issue triage with deterministic safety policy",
+    hook: "An AI-assisted workflow that turns messy issues into structured proposals, applies deterministic policy overrides, and keeps high-impact actions behind human approval and dry-run boundaries.",
+    problem:
+      "Maintainer teams face inconsistent urgency and ownership decisions, while security-sensitive issues require reliable escalation even when a model misses the signal.",
+    data: "A body-complete corpus of 5,447 Kibana-shaped issues plus a 1,362-record test split and a 211-case security escalation set.",
+    system:
+      "FastAPI and Jinja serve the review workflow. A structured classifier proposes urgency, owner, and action; Python policy rules override unsafe proposals; an approval policy gates high-impact paths; SQLAlchemy persists the workflow and append-only decision log.",
+    methods: [
+      "Structured Classification",
+      "Deterministic Policy Overrides",
+      "Human Approval Workflow",
+      "Offline Evaluation",
+      "Dry-Run Actions",
+    ],
+    outputs: [
+      "FastAPI triage and review UI",
+      "Policy-aware workflow pipeline",
+      "Decision log and optimistic concurrency",
+      "Offline evaluation runner with baselines",
+    ],
+    reviewSupport: [
+      "Safety result: 0% missed escalation on the security challenge set",
+      "Boundary: approved work produces dry-run records only and never writes upstream",
+      "Evaluation: combined LLM and policy system compared with rules-only, TF-IDF, and majority baselines",
+    ],
+    tools: ["Python", "FastAPI", "Jinja", "SQLAlchemy", "SQLite", "Postgres", "Render", "Neon"],
+    skills: ["FDE Workflows", "Safety Policy", "Human-in-the-Loop", "Evaluation Design", "Production APIs"],
+    metrics: [
+      {
+        label: "Issues evaluated",
+        value: "5,447",
+        context: "body-complete historical issue corpus",
+        verified: true,
+      },
+      {
+        label: "Missed escalation",
+        value: "0%",
+        context: "on the 211-case security challenge set",
+        verified: true,
+      },
+      {
+        label: "Owner agreement",
+        value: "68.7%",
+        context: "on the reported test split",
+        verified: true,
+      },
+    ],
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/Ch-Suharsha/issue-tracker",
+        type: "github",
+      },
+      {
+        label: "Try the demo",
+        href: "https://issue-triage.onrender.com",
+        type: "demo",
+      },
+    ],
+    visualType: "pipeline",
+    visualAsset: "/assets/projects/issue-tracker/system-design.png",
+    visualAssets: [
+      {
+        src: "/assets/projects/issue-tracker/system-design.png",
+        alt: "Issue Triage system architecture",
+      },
+    ],
+    layout: "visual-left",
+    status: "complete",
+  },
+  {
+    id: "news-aggregator",
+    title: "AI News Aggregator",
+    recruiterTitle: "Multi-source collection and personalized daily digest pipeline",
+    hook: "A staged Python and PostgreSQL pipeline that collects videos, blogs, and newsletters, then extracts, summarizes, ranks, and delivers a user-tailored daily digest.",
+    problem:
+      "Important AI updates are scattered across channels and feeds, making it difficult to collect source links, preserve full context, and consistently rank the most relevant items for one reader.",
+    data: "YouTube metadata and transcripts, blog pages, newsletters, editable user-interest instructions, and PostgreSQL article records with source provenance.",
+    system:
+      "A scheduled pipeline separates collection, content extraction, digest summarization, interest-based curation, and email delivery. Source metadata is stored first, while later stages enrich the same records and assemble ranked sections deterministically.",
+    methods: [
+      "Multi-Source Ingestion",
+      "Staged Content Processing",
+      "LLM Summarization",
+      "Interest-Based Ranking",
+      "Deterministic Email Assembly",
+    ],
+    outputs: [
+      "PostgreSQL-backed article store",
+      "Daily digest CLI pipeline",
+      "Markdown and HTML email preview",
+      "Render Cron Job deployment blueprint",
+    ],
+    reviewSupport: [
+      "Traceability: original source links remain attached to collected items",
+      "Pipeline safety: delivery is skipped when ranking fails",
+      "Separation of concerns: collection, enrichment, curation, and delivery run as explicit stages",
+    ],
+    tools: ["Python", "PostgreSQL", "Docker", "DeepSeek", "Gmail SMTP", "Render", "YouTube"],
+    skills: ["Data Pipelines", "Information Retrieval", "LLM Applications", "Workflow Design", "Email Automation"],
+    metrics: [
+      {
+        label: "Pipeline stages",
+        value: "4",
+        context: "collection, extraction, digest, and curation/delivery flow",
+        verified: true,
+      },
+      {
+        label: "Source types",
+        value: "3",
+        context: "YouTube, blogs, and newsletters",
+        verified: true,
+      },
+      {
+        label: "Delivery",
+        value: "Daily",
+        context: "scheduled personalized digest",
+        verified: true,
+      },
+    ],
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/Ch-Suharsha/news-aggregator",
+        type: "github",
+      },
+    ],
+    visualType: "pipeline",
+    visualAsset: "/assets/projects/news-aggregator/system-design.png",
+    visualAssets: [
+      {
+        src: "/assets/projects/news-aggregator/system-design.png",
+        alt: "AI News Aggregator architecture",
+      },
+    ],
+    layout: "text-left",
+    status: "complete",
+  },
 ];
 
 export const secondaryProjects: SecondaryProject[] = [
