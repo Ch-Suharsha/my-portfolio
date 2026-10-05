@@ -15,7 +15,7 @@ export function Profile() {
     <Section
       id="about"
       label="About"
-      meta="04 / Profile"
+      meta="05 / Profile"
       title="System Architecture Layers"
     >
       <Reveal>

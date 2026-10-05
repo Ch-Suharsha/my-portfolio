@@ -7,6 +7,7 @@ import { ScrollProgress } from "./components/ui/ScrollProgress";
 import { usePrefersReducedMotion } from "./hooks/usePrefersReducedMotion";
 import { CertificatesMarquee } from "./sections/CertificatesMarquee";
 import { Contact } from "./sections/Contact";
+import { FieldNotes } from "./sections/FieldNotes";
 import { Hero } from "./sections/Hero";
 import { Profile } from "./sections/Profile";
 import { ProjectShowcase, SecondaryStrip } from "./sections/ProjectShowcase";
@@ -42,6 +43,7 @@ function App() {
         <Hero />
         <ProjectShowcase />
         <SecondaryStrip />
+        <FieldNotes />
         <CertificatesMarquee />
         <Profile />
         <Contact />

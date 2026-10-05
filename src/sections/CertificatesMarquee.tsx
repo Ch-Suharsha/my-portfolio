@@ -17,7 +17,7 @@ export function CertificatesMarquee() {
     <Section
       id="certificates"
       label="Certificates"
-      meta="03 / Credentials"
+      meta="04 / Credentials"
       title="Credentials"
       intro="Click or tap a card for the skills gained, tools covered, and role relevance."
       wide

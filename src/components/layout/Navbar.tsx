@@ -3,6 +3,7 @@ import { links } from "../../data/links";
 
 const NAV_ITEMS = [
   { label: "Work", href: "#work" },
+  { label: "Notes", href: "#notes" },
   { label: "Certificates", href: "#certificates" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
